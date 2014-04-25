@@ -1,4 +1,3 @@
-
 $("#btnIr").click(function(event) {
 
     valido = true;
@@ -40,7 +39,12 @@ $("#btnIr").click(function(event) {
     }
     
 });
-
+$(document).ready(function() {
+    $.cookie.json = true;
+    if ($.cookie('usuario') !== undefined) {
+        pagePage('bemVindo');
+    }
+});
 function onSuccessLogin(data) {
 
     $("#tryLogin").hide();
